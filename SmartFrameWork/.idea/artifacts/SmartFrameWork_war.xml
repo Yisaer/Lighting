@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SmartFrameWork:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="smart-frame-1.0.0.war">
+      <element id="artifact" artifact-name="SmartFrameWork:war exploded" />
+    </root>
+  </artifact>
+</component>
