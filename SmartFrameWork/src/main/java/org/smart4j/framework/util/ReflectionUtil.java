@@ -1,66 +1,51 @@
 package org.smart4j.framework.util;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 /**
- * 反射工具类
- *
- * @since 1.0.0
+ * Created by lenovo on 2016-12-28.
  */
 public final class ReflectionUtil {
+    private static final Logger LOGGER= LoggerFactory.getLogger(ReflectionUtil.class);
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ReflectionUtil.class);
-
-    /**
-     * 创建实例
-     */
-    public static Object newInstance(Class<?> cls) {
-        Object instance;
+    public static Object newInstance(Class<?> cls){
+        Object instance=null;
         try {
-            instance = cls.newInstance();
+            instance=cls.newInstance();
         } catch (Exception e) {
-            LOGGER.error("new instance failure", e);
+            LOGGER.error("new instance failure",e);
             throw new RuntimeException(e);
         }
         return instance;
     }
 
-    /**
-     * 创建实例（根据类名）
-     */
-    public static Object newInstance(String className) {
-        Class<?> cls = ClassUtil.loadClass(className);
-        return newInstance(cls);
-    }
-
-    /**
-     * 调用方法
-     */
-    public static Object invokeMethod(Object obj, Method method, Object... args) {
+    public static Object invokeMethod(Object obj, Method method,Object...args){
+        System.out.println(obj.toString()+"调用方法invokeMethod    "+method.getName());
         Object result;
         try {
             method.setAccessible(true);
-            result = method.invoke(obj, args);
+            result=method.invoke(obj,args);
+            System.out.println("invokeMethod    "+result.toString());
         } catch (Exception e) {
-            LOGGER.error("invoke method failure", e);
+            LOGGER.error("invoke method failure",e);
+            System.out.println(e);
             throw new RuntimeException(e);
         }
         return result;
     }
 
-    /**
-     * 设置成员变量的值
-     */
-    public static void setField(Object obj, Field field, Object value) {
+    public static void setField(Object obj, Field field,Object value){
         try {
             field.setAccessible(true);
-            field.set(obj, value);
+            field.set(obj,value);
         } catch (Exception e) {
-            LOGGER.error("set field failure", e);
+            LOGGER.error("invoke method failure",e);
             throw new RuntimeException(e);
         }
+
     }
 }

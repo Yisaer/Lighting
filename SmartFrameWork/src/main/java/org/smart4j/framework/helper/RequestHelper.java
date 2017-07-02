@@ -1,21 +1,16 @@
 package org.smart4j.framework.helper;
 
-/**
- * Created by Yisa on 2017/7/2.
- */
-
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.smart4j.framework.bean.FormParam;
 import org.smart4j.framework.bean.Param;
 import org.smart4j.framework.util.ArrayUtil;
 import org.smart4j.framework.util.CodecUtil;
 import org.smart4j.framework.util.StreamUtil;
 import org.smart4j.framework.util.StringUtil;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
 
 /**
  * 请求助手类
@@ -27,12 +22,13 @@ public final class RequestHelper {
     /**
      * 创建请求对象
      */
-    public static Param createParam(HttpServletRequest request) throws IOException{
+    public static Param createParam(HttpServletRequest request) throws IOException {
         List<FormParam> formParamList = new ArrayList<FormParam>();
         formParamList.addAll(parseParameterNames(request));
         formParamList.addAll(parseInputStream(request));
         return new Param(formParamList);
     }
+
     private static List<FormParam> parseParameterNames(HttpServletRequest request) {
         List<FormParam> formParamList = new ArrayList<FormParam>();
         Enumeration<String> paramNames = request.getParameterNames();
