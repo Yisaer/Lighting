@@ -1,6 +1,6 @@
-# SmartFrame
+# Lighting
 
-SmartFramework is a lightful framework for JavaWeb .
+Lighting is a lightful framework for JavaWeb .
 
 
 
@@ -9,7 +9,7 @@ SmartFramework is a lightful framework for JavaWeb .
 ###  **A Lightful Framework for JavaWeb**
 
 
- * Smart offer some Features IOC / MVC . 
+ * Lighting offer some Features IOC / MVC . 
  * It is baesd on Servlet 3.0 spec.
  * Use **Annotation** instead of XML for Configuration.
  
@@ -32,7 +32,7 @@ SmartFramework is a lightful framework for JavaWeb .
 
 	git clone https://github.com/Yisaer/SmartFrame.git
 	
-Step into the `SmartFrameWork` folder and you can see the `pom.xml`
+Step into the `Lighting` folder and you can see the `pom.xml`
 
 	mvn install
 	
@@ -73,7 +73,7 @@ Append dependency in your `pom.xml`
 </dependency>
 ```
 
-### fill Smart Configuration
+### fill Configuration
 
 Create `smart.properties`  in `resources` folder and fill the following configuration. Here is one example.
 
@@ -95,7 +95,7 @@ You can put Entity in model folder which depends in situation.
 
 ### Service Impl
 
-Let Service Imple In `service` folder and use `@Service` to let Smart know. This also means I havent finish to separate the Interface and Implement of Service .
+Let Service Imple In `service` folder and use `@Service` to let  know. This also means I havent finish to separate the Interface and Implement of Service .
 
 Here was one example.
 
