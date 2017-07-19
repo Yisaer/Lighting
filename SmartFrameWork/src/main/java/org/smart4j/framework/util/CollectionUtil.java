@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * Created by lenovo on 2016-12-23.
+ *
  */
 public final class CollectionUtil {
     public static boolean isEmpty(Collection<?> collection){

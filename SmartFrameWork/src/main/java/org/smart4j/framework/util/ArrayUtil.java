@@ -3,7 +3,7 @@ package org.smart4j.framework.util;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
- * Created by lenovo on 2016-12-29.
+ * C
  */
 public final class ArrayUtil {
     public static boolean isNotEmpty(Object[] array) {

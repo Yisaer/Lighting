@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * Created by lenovo on 2016-12-28.
+ *
  */
 public final class ReflectionUtil {
     private static final Logger LOGGER= LoggerFactory.getLogger(ReflectionUtil.class);

@@ -5,7 +5,7 @@ package org.smart4j.framework.util;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Created by lenovo on 2016-12-23.
+ *
  */
 public final class StringUtil {
     /**

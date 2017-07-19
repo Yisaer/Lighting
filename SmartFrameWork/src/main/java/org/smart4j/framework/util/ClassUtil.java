@@ -15,7 +15,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 /**
- * Created by lenovo on 2016-12-28.
+ * ]
  */
 public final class ClassUtil {
     private static final Logger LOGGER= LoggerFactory.getLogger(ClassUtil.class);

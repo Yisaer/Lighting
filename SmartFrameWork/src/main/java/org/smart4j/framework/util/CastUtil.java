@@ -1,7 +1,7 @@
 package org.smart4j.framework.util;
 
 /**
- * Created by lenovo on 2016-12-23.
+ *
  */
 public final class CastUtil {
     public static String castString(Object object){

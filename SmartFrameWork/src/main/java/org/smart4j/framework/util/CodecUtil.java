@@ -8,7 +8,7 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 /**
- * Created by lenovo on 2016-12-29.
+ *
  */
 public class CodecUtil {
     private static final Logger LOGGER= LoggerFactory.getLogger(CodecUtil.class);
