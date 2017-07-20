@@ -30,8 +30,7 @@ Lighting is a lightful framework for JavaWeb .
 
 ### 1. Download and install
 
-	git clone https://github.com/Yisaer/SmartFrame.git
-	
+	git clone https://github.com/Yisaer/Lighting.git	
 Step into the `Lighting` folder and you can see the `pom.xml`
 
 	mvn install
@@ -41,7 +40,7 @@ Step into the `Lighting` folder and you can see the `pom.xml`
 Create a Web app Project By Maven & you will have the following list
 
 ```
-smart-sample/
+sample/
 　　┗ src/
 　　　　┗ main/
 　　　　　　┗ java/
@@ -53,38 +52,39 @@ smart-sample/
 Create following folders in `java` folder
 
 ```
-org/
-　　┗ smart4j/
+com/
+　　┗ yisaer/
 　　　　┗ sample/
 　　　　　　┗ action/
 　　　　　　┗ entity/
 　　　　　　┗ service/
 ```
 
-So the Base Package is `org.smart4j.sample`. It will be useful sooner.
+So the Base Package is `com.yisaer.sample`. It will be useful sooner.
 
 Append dependency in your `pom.xml`
 
 ```xml
 <dependency>
-    <groupId>org.smart4j</groupId>
-    <artifactId>smart-framework</artifactId>
+    <groupId>com.yisaer</groupId>
+    <artifactId>lighting-framework</artifactId>
     <version>1.1.2</version>
 </dependency>
 ```
 
 ### fill Configuration
 
-Create `smart.properties`  in `resources` folder and fill the following configuration. Here is one example.
+Create `lighting.properties`  in `resources` folder and fill the following configuration. Here is one example.
 
 ```
-smart.framework.jdbc.driver=com.mysql.jdbc.Driver
-smart.framework.jdbc.url=jdbc:mysql://localhost:3306/Test
-smart.framework.jdbc.username=root
-smart.framework.jdbc.password=root
-smart.framework.app.base_package=org.smart4j.testproject
-smart.framework.app.jsp_path=/WEB-INF/view/
-smart.framework.app.asset_path=/asset/
+
+lighting.framework.jdbc.driver=com.mysql.jdbc.Driver
+lighting.framework.jdbc.url=jdbc:mysql://localhost:3306/Test
+lighting.framework.jdbc.username=root
+lighting.framework.jdbc.password=root
+lighting.framework.app.base_package=com.yisaer.testproject
+lighting.framework.app.jsp_path=/WEB-INF/view/
+lighting.framework.app.asset_path=/asset/
 ```
 
 
