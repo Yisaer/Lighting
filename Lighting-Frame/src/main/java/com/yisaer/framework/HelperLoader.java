@@ -1,9 +1,6 @@
 package com.yisaer.framework;
 
-import com.yisaer.framework.helper.ClassHelper;
-import com.yisaer.framework.helper.BeanHelper;
-import com.yisaer.framework.helper.ControllerHelper;
-import com.yisaer.framework.helper.IocHelper;
+import com.yisaer.framework.helper.*;
 import com.yisaer.framework.util.ClassUtil;
 
 /**
@@ -14,6 +11,7 @@ public final class HelperLoader {
         Class<?>[] classList = {
                 ClassHelper.class,
                 BeanHelper.class,
+                AopHelper.class,
                 IocHelper.class,
                 ControllerHelper.class
         };
