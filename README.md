@@ -25,6 +25,12 @@ Lighting is a lightful framework for JavaWeb .
  * deploy and configure by **Maven**
 
  
+## Example
+
+The `Test` project will show the example how to use Lightful .
+ 
+
+ 
  
 ## Guide
 
@@ -211,11 +217,57 @@ public class CustomerController {
 
 ```
 
+### AOP Aspect
+
+It is easy use `@Aspect` in your project and implement `before` and `after`. You can also Override the `error` method to do sth when things go wrong. The `@Aspect` will take effect to the class which is its value like `@Aspect(Controller.class)`. So the thing you need to do in a common way :
+
+1. create a class 
+2. extends AspectProxy
+3. Annotate the `@Aspect` with the `class` you need in value
+4. Override the method if you want to
+
+Here is one example: 
+
+```java
+
+@Aspect(Controller.class)
+public class ControllerAspect extends AspectProxy{
+    private static final Logger logger = LoggerFactory.getLogger(ControllerAspect.class);
+    private long begin;
+
+    @Override
+    public void after(Class<?> cls, Method method, Object[] params, Object result) throws Throwable {
+        logger.debug("-------begin------------");
+        logger.debug(String.format("class : %s",cls.getName()));
+        logger.debug(String.format("method : %s",method.getName()));
+        begin  = System.currentTimeMillis();
+    }
+
+    @Override
+    public void before(Class<?> cls, Method method, Object[] params) throws Throwable {
+        logger.debug(String.format("time: %dms",System.currentTimeMillis()-begin));
+        logger.debug("------------ end ------------");
+    }
+ 
+}
+
+```
 
 
-## Libraries Depended
+### Transaction
 
-TODO
+The Lightful also support the `@Transaction` in `DataHelper`.Note that it is only supported on **Method** now. if the method annotated with `@Transaction` , the Connection of its Thread will set the AutoConmmit into **False** and won't commit until your method get done. It will also rollback the data when something goes wrong.
+
+Here is one example: 
+
+```java
+	@Transaction
+    public List<Customer> getCustomerList() {
+        String sql = "SELECT * FROM customer";
+        return DatabaseHelper.queryEntityList(Customer.class, sql);
+    }
+```
+
 
 
 
