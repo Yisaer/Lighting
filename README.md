@@ -9,7 +9,7 @@ Lighting is a lightful framework for JavaWeb .
 ###  **A Lightful Framework for JavaWeb**
 
 
- * Lighting offer some Features IOC / MVC . 
+ * Lighting offer some Features IOC / MVC / AOP / Transaction. 
  * It is baesd on Servlet 3.0 spec.
  * Use **Annotation** instead of XML for Configuration.
  
@@ -221,6 +221,4 @@ TODO
 
 ## TODO
 
-* AOP Feature
-* Secure 
-* Proxy
+* More Hence and Improve
