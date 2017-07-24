@@ -1,6 +1,7 @@
 package com.yisaer.service;
 
 import com.yisaer.framework.annotations.Service;
+import com.yisaer.framework.annotations.Transaction;
 import com.yisaer.framework.helper.DatabaseHelper;
 import com.yisaer.model.Customer;
 
@@ -16,6 +17,8 @@ public class CustomerService {
     /**
      *  Get CustomerList
      */
+
+    @Transaction
     public List<Customer> getCustomerList() {
         String sql = "SELECT * FROM customer";
         return DatabaseHelper.queryEntityList(Customer.class, sql);
